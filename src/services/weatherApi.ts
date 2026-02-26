@@ -4,12 +4,11 @@ const BASE_URL = 'https://api.openweathermap.org';
 import type { WeatherData, ForecastData, GeocodingResult, TemperatureUnit } from '../types';
 
 export class WeatherApiError extends Error {
-  constructor(
-    message: string,
-    public status: number
-  ) {
+  status: number;
+  constructor(message: string, status: number) {
     super(message);
     this.name = 'WeatherApiError';
+    this.status = status;
   }
 }
 

@@ -14,7 +14,7 @@ import {
 } from 'recharts';
 import { useWeather } from '../hooks/useWeather';
 import { useAppContext } from '../context/AppContext';
-import { formatTemperature, getWeatherIconUrl, formatDate } from '../services/weatherApi';
+import { getWeatherIconUrl, formatDate } from '../services/weatherApi';
 import type { ForecastItem } from '../types';
 
 export default function ForecastChart() {
@@ -157,10 +157,7 @@ export default function ForecastChart() {
                 borderRadius: '12px',
                 color: isDark ? '#f1f5f9' : '#0f172a',
               }}
-              formatter={(value: number, name: string) => [
-                `${value}${unit}`,
-                name === 'temp' ? 'Temperature' : 'Feels Like',
-              ]}
+              formatter={(value) => [`${value}${unit}`]}
             />
             <Area
               type="monotone"
@@ -201,7 +198,7 @@ export default function ForecastChart() {
                   borderRadius: '12px',
                   color: isDark ? '#f1f5f9' : '#0f172a',
                 }}
-                formatter={(value: number) => [`${value}%`, 'Humidity']}
+                formatter={(value) => [`${value}%`, 'Humidity']}
               />
               <Line type="monotone" dataKey="humidity" stroke="#06b6d4" strokeWidth={2} dot={false} />
             </LineChart>
@@ -226,7 +223,7 @@ export default function ForecastChart() {
                   borderRadius: '12px',
                   color: isDark ? '#f1f5f9' : '#0f172a',
                 }}
-                formatter={(value: number) => [`${value}%`, 'Rain Chance']}
+                formatter={(value) => [`${value}%`, 'Rain Chance']}
               />
               <Bar dataKey="rain" fill="#3b82f6" radius={[4, 4, 0, 0]} />
             </BarChart>
