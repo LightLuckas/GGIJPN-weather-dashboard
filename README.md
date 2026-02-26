@@ -10,9 +10,7 @@ A modern, responsive multi-city weather dashboard built with React 18 and TypeSc
 
 [Deployed URL — Coming Soon](#)
 
-## 📸 Screenshot
 
-> Add screenshot after deployment
 
 ## ✨ Features
 
@@ -77,29 +75,7 @@ src/
     └── index.ts         # TypeScript interfaces
 ```
 
-## ⚡ Quick Start
 
-```bash
-# Clone the repository
-git clone https://github.com/LightLuckas/GGIJPN-weather-dashboard.git
-cd GGIJPN-weather-dashboard
-
-# Install dependencies
-npm install
-
-# Create environment file
-cp .env.example .env
-# Add your OpenWeatherMap API key to .env
-
-# Start development server
-npm run dev
-
-# Run tests
-npm run test:run
-
-# Production build
-npm run build
-```
 
 ## 🔑 Environment Variables
 
